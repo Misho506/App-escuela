@@ -50,3 +50,4 @@ class Login extends React.Component {
 }
 
 export default connect(null, { setUser })(Login);
+
