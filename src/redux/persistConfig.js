@@ -5,7 +5,9 @@ export default {
   key: 'session',
   storage,
   whitelist: [ //Add persist information
+    'teachers',
     'userName',
+    'noticeList',
   ],
   stateReconciler: autoMergeLevel2,
 };

@@ -1,9 +1,8 @@
 import React from 'react';
-import history from '../../helpers/history';
 import { connect } from 'react-redux';
-import {NotificationManager} from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 
-import setUser from '../../redux/actions/user';
+import { setUser } from '../../redux/actions/user';
 
 class Login extends React.Component {
   state = {
@@ -19,6 +18,7 @@ class Login extends React.Component {
 
   login = () => {
     const { userName, password } = this.state;
+    const { setUser, history } = this.props;
     if (userName, password) {
       setUser(userName);
       NotificationManager.success('Ingreso exitoso.', 'EXITO', 5000, () => {
@@ -31,7 +31,7 @@ class Login extends React.Component {
   }
 
   render() {
-    const { userName, password } = this.state; 
+    const { userName, password } = this.state;
     return (
       <div className="pt-5 mt-5 d-flex flex-column align-items-center justify-content-center">
         <div className="d-flex flex-column">
